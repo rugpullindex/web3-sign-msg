@@ -1,0 +1,43 @@
+{
+  "name": "web3-input",
+  "version": "0.0.1",
+  "description": "web3-input is the parsimonious way to interact with Ethereum.",
+  "main": "./src/index.mjs",
+  "scripts": {
+    "build": "esbuild src/index.mjs --outfile=dist/web3-input.js --bundle --minify --sourcemap --target=chrome58,firefox57,safari11,edge16",
+    "serve": "ssl-serve ./dist --ssl",
+    "watch": "watch 'npm run build' ./src/ -d",
+    "dev": "concurrently 'npm run watch' 'npm run serve'"
+  },
+  "browser": {
+    "path": "path-browserify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimDaub/web3-input.git"
+  },
+  "keywords": [
+    "web3",
+    "bundle",
+    "size",
+    "ethereum",
+    "interaction",
+    "provider",
+    "small"
+  ],
+  "author": "Tim Daubenschütz <tim@daubenschuetz.de> (https://timdaub.github.io)",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/TimDaub/web3-input/issues"
+  },
+  "homepage": "https://github.com/TimDaub/web3-input#readme",
+  "dependencies": {
+    "@metamask/detect-provider": "1.2.0",
+    "ficusjs": "3.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "6.0.2",
+    "ssl-serve": "6.5.8",
+    "watch": "1.0.2"
+  }
+}
